@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif", serif;
+
+  --color-loom-cream: #FDFBF7;
+  --color-hand-dyed-indigo: #1B2B41;
+  --color-golden-silk: #D4AF37;
+  --color-terracotta-earth: #BC6C47;
+  --color-sage-leaf: #829474;
+  --color-maker-charcoal: #333333;
+}
+
+@layer base {
+  body {
+    @apply bg-loom-cream text-maker-charcoal font-sans antialiased selection:bg-golden-silk selection:text-white;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .puffy-button {
+    @apply relative overflow-hidden px-8 py-4 rounded-full font-medium transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl;
+  }
+  
+  .bento-card {
+    @apply bg-white rounded-3xl p-8 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:translate-y-[-4px];
+  }
+
+  .glass-light {
+    @apply bg-white/40 backdrop-blur-md border border-white/20;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-loom-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-sage-leaf);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-terracotta-earth);
+}
